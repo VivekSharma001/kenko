@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='login.css')}}">
+<style>
+    #app{
+        place-items: center;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+</style>
+{% endblock %}
+{% block header %}
+<div style="place-items: center;display: grid;justify-items: center;align-items: center;justify-content: center;align-content: center;">
+  <h1>{% block title %}Food{% endblock %}</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="app">
+<label for="food">Choose food from the list below:</label>
+
+<select name="food" id="food" style="width:300px;padding:20px;background:#2196f3;color:#fff;font-family:'Open Sans',sans-serif;">
+  <option value="rice">Rice</option>
+  <option value="roti">Roti</option>
+</select>
+<br/>
+<input id="amount" placeholder="amount of food you ate(in kg or in numbers)" style="width:100%"/>
+</div>
+{% endblock %}

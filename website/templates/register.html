@@ -1,0 +1,50 @@
+{% extends 'home.html' %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='register.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"/>
+{% endblock %}
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+  <div class="register-form">
+  <form method="post" style="margin-left:6px;" enctype="multipart/form-data">
+    <div class="form-group">
+    <label for="pimage">Select profile picture</label>
+    <input name="pimage" id="pimage" required type="file" accept="image/*"/>
+    <br/>
+    <br/>
+    <p id="ptext" style="display:none;font-size:16px;font-weight:Bold;">Preview</p>
+    <img id="preview" height="300" style="display:none;border-radius:12px"/>
+    <br/>
+    <label for="username">Username</label>
+    <input name="username" class="form-control" id="username" required>
+    </div>
+    <div class="form-group">
+    <label for="email">Email</label>
+    <input name="email" class="form-control" id="email" required>
+    </div>
+    <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="form-control" id="password" required>
+    </div>
+    <div class="form-group">
+    <label for="password1">Confirm Password</label>
+    <input name="password1" class="form-control" id="password1" required>
+    </div>
+    <div class="form-group">
+    <label for="weight">Body Weight(in kg)</label>
+    <input name="weight" name="weight" class="form-control" id="weight" required>
+    </div>
+    <div class="form-group">
+    <label for="height">Height (cm)</label>
+    <input name="height" name="height" class="form-control" id="height" required>
+    </div>
+    <br/>
+    <div class="submit">
+    <button type="submit" value="Register" class="button" id="register" >Register</button>
+    </div>
+  </form>
+  </div>
+<script src="{{url_for('static',filename='register.js')}}"></script>
+{% endblock %}

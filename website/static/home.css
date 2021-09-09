@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+:root{
+	--dblue: #05386B;
+	--dgreen: #379683;
+	--green: #5CDB95;
+	--lgreen : #8EE4AF;
+	--cream: #EDF5E1;
+}
+
+body{
+  background-color: var(--cream);
+}
+
+.division1{
+  background-color: var(--green);
+  height: 100vh;
+  color: var(--cream);
+  text-align: justify;
+}
+
+.b-img{
+  vertical-align: bottom;
+  margin: 30px;
+  float: right;
+  display: inline;
+}
+
+.bg-img{
+  position: relative;
+  top: 150px;
+  height: 250px;
+}
+
+.main-h1{
+  position: relative;
+  top: 150px;
+  display: inline;
+  padding: 60px;
+  margin-right: 30px;
+  font-size: 40px;
+}
+
+h1{
+  font-family: "Lobster";
+  font-weight: lighter;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 30px;
+  background-color: var(--lgreen);
+  border: none;
+  color: var(--cream);
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 150px;
+  transition: 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button:hover{
+  background-color: var(--cream);
+  color: var(--lgreen);
+  font-size: 22px;
+}
+
+.division{
+  margin: 10px;
+  border-bottom: solid 1px var(--dblue);
+  height: 100vh;
+  background-color: var(--cream);
+  text-align: center;
+}
+
+.div-h1{
+  font-size: 60px;
+  font-family: "Garamond";
+  color: var(--dgreen);
+}
+
+.features{
+  margin-top: 20px;
+}
+
+.features li{
+  padding: 30px;
+  font-size: 55px;
+  color: var(--dblue);
+}
+
+.name {
+  background-color: #ebebeb;
+  color: white;
+}
+.name:hover {
+  border-bottom: 5px solid #0e3721;
+  height: 30px;
+  width: 380px;
+  transition: 0.5s;
+}
+
+.email {
+  background-color: #ebebeb;
+  height: 2em;
+}
+
+.email:hover {
+  border-bottom: 5px solid #0e3721;
+  height: 30px;
+  width: 380px;
+  transition: 0.5s;
+}
+
+.message {
+  background-color: #ebebeb;
+  overflow: hidden;
+  height: 10rem;
+}
+
+.message:hover {
+  border-bottom: 5px solid #0e3721;
+  height: 12em;
+  width: 380px;
+  transition: 0.5s;
+}
+
+.formEntry {
+  display: block;
+  margin: 30px auto;
+  min-width: 300px;
+  padding: 10px;
+  border-radius: 2px;
+  border: none;
+  transition: 0.5s;
+}
+
+.submit {
+  height: 50px;
+  margin: 5px;
+  border-radius: 30px;
+  width: 200px;
+  color: white;
+  background-color: var(--dblue);
+  font-size: 20px;
+}
+
+.submit:hover {
+  box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
+  transform: translateY(-3px);
+  width: 300px;
+  border-top: 5px solid #0e3750;
+  border-radius: 60px;
+}

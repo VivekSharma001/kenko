@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{name}}</title>
+<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='profile.css')}}">
+<style>
+@font-face{
+    src:url({{url_for('static',filename="sofiapro-bold.ttf")}});
+    font-family:"Bold";
+    display:swap;
+}
+</style>
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block content %}
+<div id="app">
+<img height="300" width="175" src="/{{uname}}/profileimage" class="pimage" id="pimage">
+<h2 style="font-family:'Bold'">
+    Username: {{uname}}
+    {% if verified %}
+    <span class="badge" title="verified"><img src="/static/verfied.svg"></span>
+    {% endif %}
+</h2>
+<div id="pdetails">
+<p>Weight: {{weight}} kg</p>
+<p>Height: {{height}} cm</p>
+<p>BMI: {{bmi[0:4]}}</p>
+<p>Email: {{email}}</p>
+</div>
+</div>
+{% endblock %}

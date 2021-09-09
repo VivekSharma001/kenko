@@ -1,0 +1,25 @@
+#app{
+    display:grid;
+    place-items:center;
+    margin-top: 50px;
+}
+.pimage{
+    display: block;
+    border-radius: 200%;
+    height: 150px;  
+    border: 3px dashed black;  
+}
+
+.p-details{
+  font-family: "bold";
+  padding: 5px;
+}
+
+p{
+  padding: 10px;
+  font-size: 24px;
+}
+
+#space{
+  width: 30px;
+}

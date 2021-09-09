@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+.flash,.error{
+    background:#ff0000;
+    color:#111
+}
+.flash,.success{
+    background:#00ff00;
+    color:#111;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="division1">
+  <div class="b-img">
+  <img src="{{url_for('static', filename='brain.png')}}" class="bg-img"> 
+  </div>
+  <div class="main-h1">
+  <h1>Start your healthy journey</h1>
+  <h1>by signing up today!</h1>
+  <a href="{{url_for('auth.register')}}"><button class="button">Let's Go!</button></a>
+  </div>
+</div>
+<br/>
+<div class="division">
+  <h1 class="div-h1">Features</h1>
+  <ul class="features">
+    <li>Food logging and calorie counter</li>
+    <li>Weight log and analysis</li>
+    <li>Excercise log</li>
+    <li>Graphs and detailed analysis</li>
+  </ul>
+</div>
+<div class="division">
+  <h1 class="div-h1">Contact Us.</h1>
+  <form method="post" style="margin-left:6px;" class="form">
+    <input class="name formEntry" id="contact-name" placeholder="Name" required name="name">
+    <input class="email formEntry" id="contact-email" placeholder="Email" required name="email">
+    <input placeholder="Message" class="message formEntry" id="contact-message" required name="msg">
+    <br/>
+    <button type="submit" value="submit" class="submit">Submit</button>
+  </div>
+{% endblock %}

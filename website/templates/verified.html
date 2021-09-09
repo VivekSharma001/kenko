@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+    <style>
+        @font-face{
+            src:url({{url_for('static',filename="sofiapro-bold.ttf")}});
+            font-family: "Bold";
+            display:swap;
+        }
+        .flash,.error{
+            background:#ff0000;
+            color:#111;
+        }
+        .flash,.success{
+            background:#ff0000;
+            color:#111;
+        }
+        #app{
+            display:grid;
+            align-items:center;
+            place-items:center;
+        }
+        .bold{
+            font-family:"Bold"
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    {% if error %}
+    {{message}}
+    {% else %}
+    {{message}}
+    <br/>
+    <div id="app">
+        <h2 class="bold">Now You Can Continue Using The Site Freely</h2>
+        <a href="/">Home</a>
+        <br>
+        {% if user %}
+        <a href="/profile/{{user.username}}">Dashboard</a>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% endblock %}
+
+</body>
+</html>

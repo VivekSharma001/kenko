@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% block head %}
+    <title>Home</title>
+        <style>
+        .flash,.error{
+            color:red;
+        }
+        .flash,.success{
+            color:#3ddc84;
+        }
+    </style>
+  {% endblock %}
+</head>
+<body>
+  <nav id="navbar">
+  <ul class="nav-ul">
+  	<li><img src="{{url_for('static', filename='kenko-title.png')}}" align="middle" style="height: 30px; padding: 15px;" /></li>
+  	<li><a href="{{url_for('template_rendering.home')}}">Home</a></li>
+    {% if user.is_authenticated %}
+      <li><span><a href="/profile/{{user.username}}">{{user.username}}</a></span>
+      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+      <li><a href="{{ url_for('template_rendering.weightpage') }}">weight</a>
+      <li><a href="{{ url_for('template_rendering.foodpage') }}">Food Log</a>
+    {% else %}
+      <li><a href="{{ url_for('auth.register') }}">Register</a>
+      <li><a href="{{ url_for('auth.login') }}">Log In</a>
+    {% endif %}
+  </ul>
+</nav>
+<header>
+    {% block header %}{% endblock %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        <p class="flash {{category}}">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+</header>
+{% block content %}
+{% endblock %}
+<!-- <script type="javascript" src="{{url_for('static', filename='index.js')}}"> -->
+</body>
+</html>
